@@ -39,7 +39,7 @@ document.getElementById('ptxsearch-input').addEventListener('keyup', delay(funct
                 buildTreeSub(15);
             }
         );
-}, 2000));
+}, 1000));
 
 function delay(callback, ms) {
     let timer = 0;
@@ -76,9 +76,7 @@ function buildTreeSub(id){
                     if(htmlexists === null)
                         document.getElementById(node).innerHTML += dataset;
                 }
-                let focus = document.querySelector('li[data-id="'+ id +'"]').focus();
-                console.log(focus);
-
+                let focus = document.querySelector('li[data-id="'+ id +'"]').scrollIntoView();
             }
         )
 }
