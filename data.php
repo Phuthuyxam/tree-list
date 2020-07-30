@@ -38,8 +38,9 @@
                 if(!empty($cateChild)){
                     $this->treeDom = $this->treeDom . "<ul>";
                     foreach ($cateChild as $elm){
+                        $template = '<a href="#"><div class="ptx-tree__item"><div class="ptx-tree__listinfo"><div class="ptx-listinfo__item">Tên người dùng: '. $elm['name'] .'</div><div class="ptx-listinfo__item">sđt: '. $elm['phone'] .'</div><div class="ptx-listinfo__item">Chức danh: Giam đốc</div><div class="ptx-listinfo__item">Mã người dùng: MBL80-032</div></div><div class="ptx-tree__profile"><div class="ptx-tree__avatar"><img src="https://cdn2.iconfinder.com/data/icons/avatar-profile/476/profile_avatar_contact_account_user_default-512.png"></div><div class="ptx-profile__item ptx-profile__name"><b>'. $elm['name'] .'</b></div><div class="ptx-profile__item"><strong>Điểm: sadasdasd</strong></div><div class="ptx-profile__item"><strong>Công việc: 0/0</strong></div></div></div></a>';
                         $class_ = ($deep == 0) ? 'class="ptx_last_child" data-search="'. $searchMode .'"' : "";
-                        $this->treeDom = $this->treeDom . '<li id="treeSub-'. $elm['id'] .'" '. $class_ .' data-id="'. $elm['id'] .'">' . '<a href="#">'.  $elm['name'] .'</a>';
+                        $this->treeDom = $this->treeDom . '<li id="treeSub-'. $elm['id'] .'" '. $class_ .' data-id="'. $elm['id'] .'">' . $template;
                         $this->treeMakeElement($datas , $deep , $elm['id'] , $searchMode);
                         $this->treeDom = $this->treeDom . "</li>";
                     }
