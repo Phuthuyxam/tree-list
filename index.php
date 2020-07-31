@@ -23,7 +23,7 @@ The markup will be simple nested lists
     }
 
     .tree ul {
-        padding-left: 20px; position: relative;
+        padding-left: 35px; position: relative;
         
         transition: all 0.5s;
         -webkit-transition: all 0.5s;
@@ -39,12 +39,17 @@ The markup will be simple nested lists
         -ms-flex-pack: center;
         justify-content: center;
     }
+    .searchResult>a{
+        border: solid thin #fc9923;
+        border-top: 6px solid #fc9923 !important;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    }
 
     .tree li {
         /*text-align: center;*/
         list-style-type: none;
         position: relative;
-        padding: 5px 0 5px 20px;
+        padding: 5px 0 5px 35px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -60,7 +65,7 @@ The markup will be simple nested lists
         content: '';
         position: absolute; left: 0; bottom: 50%;
         border-left: 1px solid #ccc;
-        width: 20px; height: 50%;
+        width: 35px; height: 50%;
     }
     .tree li::after{
         bottom: auto; top: 50%;
@@ -99,11 +104,11 @@ The markup will be simple nested lists
         content: '';
         position: absolute; left: 0; top: 50%;
         border-top: 1px solid #ccc;
-        width: 20px; height: 0;
+        width: 35px; height: 0;
     }
 
     .tree li a{
-        border-top: 6px solid #40A4F4;
+        border-top: 6px solid hsl(176,100%,24%);
         box-shadow: 0 4px 6px 0 hsla(0,0%,0%,0.2);
         padding: 0px;
         text-decoration: none;
@@ -124,7 +129,8 @@ The markup will be simple nested lists
         -moz-transition: all 0.5s;
     }
     .ptx-tree__listinfo {
-        padding: 15px;
+        background: hsl(0, 0% , 98%);
+        padding: 10px;
         padding-bottom: 30px;
     }
     .ptx-listinfo__item {
@@ -132,6 +138,7 @@ The markup will be simple nested lists
         font-size: 13px;
     }
     .ptx-tree__profile {
+        text-align: center;
         padding: 15px;
         padding-top: 30px;
         position: relative;
@@ -161,7 +168,9 @@ The markup will be simple nested lists
     /*Time for some hover effects*/
     /*We will apply the hover effect the the lineage of the element also*/
     .tree li a:hover, .tree li a:hover+ul li a {
-        background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+        border: solid thin #40A4F4;
+        border-top: 6px solid #40A4F4 !important;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
     }
     /*Connector styles on hover*/
     .tree li a:hover+ul li::after, 
@@ -171,242 +180,12 @@ The markup will be simple nested lists
         border-color:  #94a0b4;
     }
 
-    /*Thats all. I hope you enjoyed it.
-    Thanks :)*/
-
 </style>
 <div id="ptxsearch-tree">
     <label for="gsearch">Search Tree:</label>
     <input type="search" id="ptxsearch-input" name="search">
 </div>
 <div class="tree" id="ptxtreelist">
-<!--    <ul>-->
-<!--        <li id="treeSub-1" data-id="1">-->
-<!--            <a href="#">-->
-<!--                <div class="ptx-tree__item">-->
-<!--                    <div class="ptx-tree__listinfo">-->
-<!--                        <div class="ptx-listinfo__item">-->
-<!--                           Tên người dùng: PHU THUY XAM-->
-<!--                        </div>-->
-<!--                        <div class="ptx-listinfo__item">-->
-<!--                            sđt: 0344719082-->
-<!--                        </div>-->
-<!--                        <div class="ptx-listinfo__item">-->
-<!--                            Chức danh: Giam đốc-->
-<!--                        </div>-->
-<!--                        <div class="ptx-listinfo__item">-->
-<!--                            Mã người dùng: MBL80-032-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="ptx-tree__profile">-->
-<!--                        <div class="ptx-tree__avatar">-->
-<!--                            <img src="https://cdn2.iconfinder.com/data/icons/avatar-profile/476/profile_avatar_contact_account_user_default-512.png">-->
-<!--                        </div>-->
-<!--                        <div class="ptx-profile__item ptx-profile__name">-->
-<!--                            <b>Phuthuyxam</b>-->
-<!--                        </div>-->
-<!--                        <div class="ptx-profile__item">-->
-<!--                            <strong>-->
-<!--                                Point: sadasdasd-->
-<!--                            </strong>-->
-<!--                        </div>-->
-<!--                        <div class="ptx-profile__item">-->
-<!--                            <strong>-->
-<!--                                Công việc: 0/0-->
-<!--                            </strong>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-<!--            <ul>-->
-<!--                <li id="treeSub-5" class="" data-search="" data-id="5">-->
-<!--                    <a href="#">ptx5</a>-->
-<!--                    <ul>-->
-<!--                        <li id="treeSub-7" data-id="7">-->
-<!--                            <a href="#">ptx7</a>-->
-<!--                            <ul>-->
-<!--                                <li id="treeSub-8" class="" data-search="" data-id="8">-->
-<!--                                    <a href="#">ptx8</a>-->
-<!--                                    <ul>-->
-<!--                                        <li id="treeSub-19" data-id="19"><a href="#">ptx19</a></li>-->
-<!--                                    </ul>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li id="treeSub-6" class="" data-search="" data-id="6">-->
-<!--                    <a href="#">ptx6</a>-->
-<!--                    <ul>-->
-<!--                        <li id="treeSub-14" data-id="14"><a href="#">ptx14</a></li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </li>-->
-<!--        <li id="treeSub-2" data-id="2">-->
-<!--            <a href="#">ptx2</a>-->
-<!--            <ul>-->
-<!--                <li id="treeSub-12" class="" data-search="" data-id="12">-->
-<!--                    <a href="#">ptx12</a>-->
-<!--                    <ul>-->
-<!--                        <li id="treeSub-13" data-id="13"><a href="#">ptx13</a></li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </li>-->
-<!--        <li id="treeSub-3" data-id="3">-->
-<!--            <a href="#">ptx3</a>-->
-<!--            <ul>-->
-<!--                <li id="treeSub-9" class="" data-search="" data-id="9">-->
-<!--                    <a href="#">ptx9</a>-->
-<!--                    <ul>-->
-<!--                        <li id="treeSub-10" data-id="10">-->
-<!--                            <a href="#">ptx10</a>-->
-<!--                            <ul>-->
-<!--                                <li id="treeSub-11" class="" data-search="" data-id="11">-->
-<!--                                    <a href="#">ptx11</a>-->
-<!--                                    <ul>-->
-<!--                                        <li id="treeSub-15" data-id="15"><a href="#">ptx15</a></li>-->
-<!--                                        <li id="treeSub-16" data-id="16">-->
-<!--                                            <a href="#">ptx16</a>-->
-<!--                                            <ul>-->
-<!--                                                <li id="treeSub-17" class="" data-search="" data-id="17">-->
-<!--                                                    <a href="#">ptx17</a>-->
-<!--                                                    <ul>-->
-<!--                                                        <li id="treeSub-18" data-id="18">-->
-<!--                                                            <a href="#">ptx18</a>-->
-<!--                                                            <ul>-->
-<!--                                                                <li id="treeSub-20" class="" data-search="" data-id="20"><a href="#">ptx20</a></li>-->
-<!--                                                            </ul>-->
-<!--                                                        </li>-->
-<!--                                                    </ul>-->
-<!--                                                </li>-->
-<!--                                            </ul>-->
-<!--                                        </li>-->
-<!--                                    </ul>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </li>-->
-<!--        <li id="treeSub-4" data-id="4"><a href="#">ptx4</a></li>-->
-<!--    </ul> <ul>-->
-<!--        <li id="treeSub-1" data-id="1">-->
-<!--            <a href="#">-->
-<!--                <div class="ptx-tree__item">-->
-<!--                    <div class="ptx-tree__listinfo">-->
-<!--                        <div class="ptx-listinfo__item">-->
-<!--                           Tên người dùng: PHU THUY XAM-->
-<!--                        </div>-->
-<!--                        <div class="ptx-listinfo__item">-->
-<!--                            sđt: 0344719082-->
-<!--                        </div>-->
-<!--                        <div class="ptx-listinfo__item">-->
-<!--                            Chức danh: Giam đốc-->
-<!--                        </div>-->
-<!--                        <div class="ptx-listinfo__item">-->
-<!--                            Mã người dùng: MBL80-032-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="ptx-tree__profile">-->
-<!--                        <div class="ptx-tree__avatar">-->
-<!--                            <img src="https://cdn2.iconfinder.com/data/icons/avatar-profile/476/profile_avatar_contact_account_user_default-512.png">-->
-<!--                        </div>-->
-<!--                        <div class="ptx-profile__item ptx-profile__name">-->
-<!--                            <b>Phuthuyxam</b>-->
-<!--                        </div>-->
-<!--                        <div class="ptx-profile__item">-->
-<!--                            <strong>-->
-<!--                                Point: sadasdasd-->
-<!--                            </strong>-->
-<!--                        </div>-->
-<!--                        <div class="ptx-profile__item">-->
-<!--                            <strong>-->
-<!--                                Công việc: 0/0-->
-<!--                            </strong>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-<!--            <ul>-->
-<!--                <li id="treeSub-5" class="" data-search="" data-id="5">-->
-<!--                    <a href="#">ptx5</a>-->
-<!--                    <ul>-->
-<!--                        <li id="treeSub-7" data-id="7">-->
-<!--                            <a href="#">ptx7</a>-->
-<!--                            <ul>-->
-<!--                                <li id="treeSub-8" class="" data-search="" data-id="8">-->
-<!--                                    <a href="#">ptx8</a>-->
-<!--                                    <ul>-->
-<!--                                        <li id="treeSub-19" data-id="19"><a href="#">ptx19</a></li>-->
-<!--                                    </ul>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li id="treeSub-6" class="" data-search="" data-id="6">-->
-<!--                    <a href="#">ptx6</a>-->
-<!--                    <ul>-->
-<!--                        <li id="treeSub-14" data-id="14"><a href="#">ptx14</a></li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </li>-->
-<!--        <li id="treeSub-2" data-id="2">-->
-<!--            <a href="#">ptx2</a>-->
-<!--            <ul>-->
-<!--                <li id="treeSub-12" class="" data-search="" data-id="12">-->
-<!--                    <a href="#">ptx12</a>-->
-<!--                    <ul>-->
-<!--                        <li id="treeSub-13" data-id="13"><a href="#">ptx13</a></li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </li>-->
-<!--        <li id="treeSub-3" data-id="3">-->
-<!--            <a href="#">ptx3</a>-->
-<!--            <ul>-->
-<!--                <li id="treeSub-9" class="" data-search="" data-id="9">-->
-<!--                    <a href="#">ptx9</a>-->
-<!--                    <ul>-->
-<!--                        <li id="treeSub-10" data-id="10">-->
-<!--                            <a href="#">ptx10</a>-->
-<!--                            <ul>-->
-<!--                                <li id="treeSub-11" class="" data-search="" data-id="11">-->
-<!--                                    <a href="#">ptx11</a>-->
-<!--                                    <ul>-->
-<!--                                        <li id="treeSub-15" data-id="15"><a href="#">ptx15</a></li>-->
-<!--                                        <li id="treeSub-16" data-id="16">-->
-<!--                                            <a href="#">ptx16</a>-->
-<!--                                            <ul>-->
-<!--                                                <li id="treeSub-17" class="" data-search="" data-id="17">-->
-<!--                                                    <a href="#">ptx17</a>-->
-<!--                                                    <ul>-->
-<!--                                                        <li id="treeSub-18" data-id="18">-->
-<!--                                                            <a href="#">ptx18</a>-->
-<!--                                                            <ul>-->
-<!--                                                                <li id="treeSub-20" class="" data-search="" data-id="20"><a href="#">ptx20</a></li>-->
-<!--                                                            </ul>-->
-<!--                                                        </li>-->
-<!--                                                    </ul>-->
-<!--                                                </li>-->
-<!--                                            </ul>-->
-<!--                                        </li>-->
-<!--                                    </ul>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </li>-->
-<!--        <li id="treeSub-4" data-id="4"><a href="#">ptx4</a></li>-->
-<!--    </ul>-->
 </div>
 <div id="ptxPluss" style="float: right; cursor: pointer;">
     <img width="30" height="30" src="plus.svg" alt="load more">
