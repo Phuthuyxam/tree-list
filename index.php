@@ -180,10 +180,52 @@ The markup will be simple nested lists
         border-color:  #94a0b4;
     }
 
+    .ptx-result__search {
+        position: absolute;
+        left: 83px;
+        z-index: 99;
+        box-shadow: 0 4px 6px 0 hsla(0,0%,0%,0.2);
+        background: hsl(0,0%,97%);
+    }
+    .ptx-result__item {
+        padding: 10px 10px;
+    }
+    div#ptxsearch-tree {
+        position: relative;
+    }
+
 </style>
 <div id="ptxsearch-tree">
     <label for="gsearch">Search Tree:</label>
     <input type="search" id="ptxsearch-input" name="search">
+
+    <div class="ptx-result__search">
+        <div class="ptx-result__item">
+            <div class="result-item__image" style="width: 50px; height: 50px;">
+                <img width="100%" src="https://atpmedia.vn/wp-content/uploads/2019/12/C%C3%A1ch-s%E1%BB%AD-d%E1%BB%A5ng-th%E1%BA%BB-IMG.jpg" alt="">
+            </div>
+            <div class="result-item__info">
+                hello1 <br> phamphuc12@gmail.com <br> hudyahy
+            </div>
+
+        </div>
+        <div class="ptx-result__item">
+            hello2 | phamphuc12@gmail.com | hudyahy
+        </div>
+        <div class="ptx-result__item">
+            hello3 | phamphuc12@gmail.com | hudyahy
+        </div>
+        <div class="ptx-result__item">
+            hello4 | phamphuc12@gmail.com | hudyahy
+        </div>
+        <div class="ptx-result__item">
+            hello5 | phamphuc12@gmail.com | hudyahy
+        </div>
+        <div class="ptx-result__item">
+            no result
+        </div>
+    </div>
+
 </div>
 <div class="tree" id="ptxtreelist">
 </div>

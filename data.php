@@ -25,6 +25,7 @@
         private $treeDom = "";
         private $DEEP = 3;
         private $treeArray = [];
+        private $userMatch = [];
         protected function treeMakeElement($datas, $deep, $parent, $searchMode = false){
             $cateChild = array();
             $treeDom = $this->treeDom;
@@ -77,13 +78,32 @@
                 }
             }
         }
-
-        public function searchTree($key){
-            if($key == null) return "";
-            return json_encode([["id"=>20,"name"=>"ptx20","phone"=>"01212312","email"=>"ptx20@gmail.com","parent"=>18],
-                ["id"=>11,"name"=>"ptx11","phone"=>"01212312","email"=>"ptx11@gmail.com","parent"=>10],
-                ["id"=>12,"name"=>"ptx12","phone"=>"01212312","email"=>"ptx12@gmail.com","parent"=>2],
-                ["id"=>13,"name"=>"ptx13","phone"=>"01212312","email"=>"ptx13@gmail.com","parent"=>12],]);
+        public function buildUserMap($datas , $parent){
+            $cateChild = array();
+            foreach($datas as $element) {
+                if($element['parent'] == $parent){
+                    $cateChild[] = $element;
+                }
+            }
+            if(!empty($cateChild)){
+                foreach ($cateChild as $elm){
+                    array_push($this->userMatch , $elm);
+                    $this->buildUserMap($datas, $elm['id']);
+                }
+            }
+        }
+        public function searchTree($idUser, $dataResult){
+            $this->buildUserMap($this->data, $idUser);
+            $userMatch = $this->userMatch;
+            $searchResult = array();
+            if(!empty($userMatch) && !empty($dataResult)){
+                foreach ($dataResult as $item){
+                    if(!empty(array_search($item, array_column($userMatch, 'id')))){
+                        $searchResult[] = $userMatch[array_search($item, array_column($userMatch, 'id'))];
+                    }
+                }
+            }
+            return json_encode($searchResult);
         }
     }
     $GLOBALS['PTX_MAKE_DATA'] = new PTX_MAKE_DATA();
